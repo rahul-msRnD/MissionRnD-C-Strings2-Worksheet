@@ -20,7 +20,21 @@ NOTES: Don't create new string , Dont return anything ,you have been given two p
 #include <stddef.h>
 
 
-void count_vowels_and_consonants(char *str,int *consonants, int *vowels){
-
-
+void count_vowels_and_consonants(char *str, int *consonants, int *vowels){
+	if (str == NULL)
+	{
+		*consonants = 0;
+		*vowels = 0;
+		return;
+	}
+	*consonants = 0;
+	*vowels = 0;
+	char c;
+	while ((c = *str++) != '\0')
+	{
+		if (c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'i' || c == 'I' || c == 'o' || c == 'O' || c == 'u' || c == 'U')
+			*vowels += 1;
+		else if (c >= 65 && c<=122)
+			*consonants+=1;
+	}
 }
