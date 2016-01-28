@@ -30,7 +30,8 @@ void count_vowels_and_consonants(char *str, int *consonants, int *vowels){
 	*consonants = 0;
 	*vowels = 0;
 	char c;
-	while ((c = *str++) != '\0')
+	int i = 0;
+	while ((c = str[i++]) != '\0')
 	{
 		if (c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'i' || c == 'I' || c == 'o' || c == 'O' || c == 'u' || c == 'U')
 			*vowels += 1;
